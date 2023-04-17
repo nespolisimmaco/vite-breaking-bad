@@ -1,9 +1,13 @@
+@use "./partials/variables" as *;
+
 @import "@fontsource/roboto";
 
 @import "bootstrap/scss/bootstrap";
 
+
 body {
     font-family: "Roboto", sans-serif;
+    background-color: $background;
 }
 
 img {
