@@ -25,7 +25,7 @@ export default {
             <div class="container-fluid">
                 <div class="row row-cols-5 g-3">
                     <div class="col" v-for="card in store.cards" :key="card.id">
-
+                        <Card :card="card" />
                     </div>
                 </div>
             </div>
