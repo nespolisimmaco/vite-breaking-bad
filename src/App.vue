@@ -32,7 +32,6 @@ export default {
 <template>
   <AppHeader />
   <CardsList />
-  <Card />
 </template>
 
 <style lang="scss">
