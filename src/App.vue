@@ -17,23 +17,36 @@ export default {
     }
   },
   mounted() {
-    this.store.loading = true;
-    axios
-      .get(store.apiURL)
-      .then((resp) => {
-        console.log(resp);
-        const myData = resp.data.data;
-        console.log(myData);
-        this.store.cards = myData;
-        this.store.loading = false;
-      })
+    this.getCards();
+  },
+  methods: {
+    getCards() {
+      this.store.loading = true;
+      const params = {};
+      if (this.store.selectedArchetype) {
+        params.archetype = this.store.selectedArchetype;
+      }
+      axios
+        .get(store.apiURL, {
+          params
+        })
+        .then((resp) => {
+          const myData = resp.data.data;
+          console.log(myData);
+          this.store.cards = myData;
+          this.store.loading = false;
+        })
+    },
+    handleFilter() {
+      this.getCards();
+    }
   }
 }
 </script>
 
 <template>
   <AppHeader />
-  <SelectArchetype />
+  <SelectArchetype @filter="handleFilter" />
   <CardsList />
 </template>
 
