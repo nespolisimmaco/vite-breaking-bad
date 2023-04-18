@@ -9,15 +9,15 @@ export default {
 </script>
 
 <template>
-    <div class="card text-center">
+    <div class="card h-100 text-center">
         <div class="card-image">
-            <img :src="card.card_images[0].image_url_small" alt="">
+            <img class="card-img-top" :src="card.card_images[0].image_url_small" alt="">
         </div>
         <div class="card-name my-2">
             {{ card.name }}
         </div>
-        <div class="race">
-            {{ card.race }}
+        <div class="archetype">
+            {{ card.archetype }}
         </div>
     </div>
 </template>

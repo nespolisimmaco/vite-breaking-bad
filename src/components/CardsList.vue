@@ -16,7 +16,8 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <h2 class="loading" v-if="store.loading">Loading...</h2>
+    <div class="container" v-else>
         <select class="rounded py-1 px-3 border-0 mt-3" name="type" id="card-type">
             <option value="alien">Alien</option>
         </select>
@@ -35,6 +36,10 @@ export default {
 
 <style scoped lang="scss">
 @use "../style/partials/variables" as *;
+
+.loading {
+    color: white;
+}
 
 .wrapper {
     background-color: $header-color;

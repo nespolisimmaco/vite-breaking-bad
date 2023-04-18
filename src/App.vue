@@ -17,6 +17,7 @@ export default {
     }
   },
   mounted() {
+    this.store.loading = true;
     axios
       .get(store.apiURL)
       .then((resp) => {
@@ -24,6 +25,7 @@ export default {
         const myData = resp.data.data;
         console.log(myData);
         this.store.cards = myData;
+        this.store.loading = false;
       })
   }
 }
