@@ -3,13 +3,13 @@ import { store } from './store';
 import axios from "axios";
 import AppHeader from "./components/AppHeader.vue";
 import CardsList from "./components/CardsList.vue";
-import Card from "./components/Card.vue";
+import SelectArchetype from './components/SelectArchetype.vue';
 
 export default {
   components: {
     AppHeader,
     CardsList,
-    Card
+    SelectArchetype
   },
   data() {
     return {
@@ -33,6 +33,7 @@ export default {
 
 <template>
   <AppHeader />
+  <SelectArchetype />
   <CardsList />
 </template>
 

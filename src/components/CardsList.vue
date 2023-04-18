@@ -18,10 +18,6 @@ export default {
 <template>
     <h2 class="loading" v-if="store.loading">Loading...</h2>
     <div class="container" v-else>
-        <select class="rounded py-1 px-3 border-0 mt-3" name="type" id="card-type">
-            <option value="alien">Alien</option>
-        </select>
-
         <div class="wrapper mt-4 p-4">
             <div class="container-fluid">
                 <div class="row row-cols-5 g-3">
