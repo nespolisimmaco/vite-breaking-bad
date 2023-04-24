@@ -22,7 +22,10 @@ export default {
   methods: {
     getCards() {
       this.store.loading = true;
-      const params = {};
+      const params = {
+        num: 20,
+        offset: 0,
+      };
       if (this.store.selectedArchetype) {
         params.archetype = this.store.selectedArchetype;
       }

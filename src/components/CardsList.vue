@@ -1,11 +1,13 @@
 <script>
 import Card from "../components/Card.vue";
 import { store } from '../store';
+import CardsCounter from "./CardsCounter.vue";
 
 export default {
     name: "CardsList",
     components: {
-        Card
+        Card,
+        CardsCounter
     },
     data() {
         return {
@@ -20,6 +22,7 @@ export default {
     <div class="container" v-else>
         <div class="wrapper mt-4 p-4">
             <div class="container-fluid">
+                <CardsCounter />
                 <div class="row row-cols-5 g-3">
                     <div class="col" v-for="card in store.cards" :key="card.id">
                         <Card :card="card" />
